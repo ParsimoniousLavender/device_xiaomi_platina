@@ -29,26 +29,30 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/platina/device.mk)
 
-# Inherit some common Havoc stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Inherit some common Evo stuff.
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+EVO_DONATE_URL := https://paypal.me/Sap1k
+EVO_MAINTAINER := Sap1k
+EVO_SUPPORT_URL := https://t.me/EvolutionXLavender
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="platina" \
     TARGET_DEVICE="platina" \
-    PRIVATE_BUILD_DESC="coral-user 10 QQ1D.200205.002 6084393 release-keys"
-
-TARGET_VENDOR_PRODUCT_NAME := platina
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+    PRIVATE_BUILD_DESC="platina-user 10 QKQ1.190910.002 V11.0.3.0.QDTMIXM release-keys"
 
 # Device identifier
-PRODUCT_BRAND := Xiaomi
+PRODUCT_NAME := evolution_platina
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := havoc_platina
+PRODUCT_PLATFORM := SDM660
 PRODUCT_DEVICE := platina
-PRODUCT_MODEL := MI 8 Lite
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Mi 8 Lite
 
-# Havoc
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.havoc.maintainer=RiqueBarros
+TARGET_VENDOR_PRODUCT_NAME := platina
 
-export export HAVOC_BUILD_TYPE=Official
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
