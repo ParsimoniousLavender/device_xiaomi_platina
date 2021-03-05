@@ -27,16 +27,26 @@ $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 # Device Path
 DEVICE_PATH := device/xiaomi/platina
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
     $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     $(DEVICE_PATH)/configs/audio/mixer_paths_overlay_static.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_overlay_static.xml
 
-# NCO/NBK
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay \
-    NotchBarKiller
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-evo
+
+# APEX
+ENABLE_APEX := true
+
+# POWERHINT VARIANT
+EAS_POWERHINT_VARIANT := sdm660
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2280
@@ -45,13 +55,13 @@ TARGET_SCREEN_WIDTH := 1080
 # Device properties
 $(call inherit-product, $(DEVICE_PATH)/device_prop.mk)
 
+# HW crypto
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
 # Media
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
-
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -72,10 +82,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Sensors
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
-
-# Soong
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
 
 # Vibrator
 PRODUCT_PACKAGES += \
