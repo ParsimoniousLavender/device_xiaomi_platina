@@ -1873,6 +1873,9 @@ vendor/lib64/libkeystore-engine-wifi-hidl.so
 vendor/lib64/libkeystore-wifi-hidl.so
 vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so
 
+# Wi-Fi - from jasmine-user 10 V11.0.22.0.QDIMIXM
+vendor/bin/cnss-daemon
+
 # Sensors
 vendor/lib/sensors.ssc.so
 vendor/lib64/sensors.ssc.so
