@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay \
-    $(DEVICE_PATH)/overlay-evo
+    $(DEVICE_PATH)/overlay-dot
 
 # APEX
 ENABLE_APEX := true

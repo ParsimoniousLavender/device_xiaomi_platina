@@ -30,15 +30,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/xiaomi/platina/device.mk)
 
 # Inherit some common Evo stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/dot/config/common.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
-EVO_DONATE_URL := https://paypal.me/Sap1k
-EVO_MAINTAINER := Sap1k
-EVO_SUPPORT_URL := https://t.me/EvolutionXLavender
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="platina" \
@@ -46,7 +43,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="platina-user 10 QKQ1.190910.002 V11.0.3.0.QDTMIXM release-keys"
 
 # Device identifier
-PRODUCT_NAME := evolution_platina
+PRODUCT_NAME := dot_platina
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_PLATFORM := SDM660
 PRODUCT_DEVICE := platina

@@ -21,11 +21,11 @@
 # definition file).
 #
 
-# inherit MI 8 Lite EvoX device config
+# inherit MI 8 Lite DotOS device config
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/evolution_platina.mk
+    $(LOCAL_DIR)/dot_platina.mk
 
 COMMON_LUNCH_CHOICES := \
-    evolution_platina-eng \
-    evolution_platina-userdebug \
-    evolution_platina-user
+    dot_platina-eng \
+    dot_platina-userdebug \
+    dot_platina-user
